@@ -48,7 +48,7 @@ describe('Middleware', function(){
             middleware.logRequests(req, null, next);
     
             // Verify result
-            expectedMethod.should.equal(actualMethod, "The expected request method was not include in the log message.");
+            expectedMethod.should.equal(actualMethod, "The expected request method was not included in the log message.");
 
             // Restore the stubbed functions            
             serverLogger.info.restore();
