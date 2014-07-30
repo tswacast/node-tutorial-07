@@ -4,6 +4,7 @@ var http = require("http");
 var serverLogger = require("./serverLogger");
 var express = require("express");
 var app = express();
+var favicon = require("serve-favicon");
 var middleware = require("./middleware");
 var routes = require('./routes/');
 
@@ -11,7 +12,8 @@ var routes = require('./routes/');
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
-// Set up the express app's middleware to run before routes
+// Set up the express app's middleware to run before routes\
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(middleware.logRequests);
 
 // Define routes
